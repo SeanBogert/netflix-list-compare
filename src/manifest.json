@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "Netflix List Compare",
+	"description": "Compare Netflix user's My List to find something to watch",
+	"version": "1.0",
+	"author": "Sean Bogert",
+
+	"content_scripts":[{
+		"matches": ["http://www.netflix.com/*"],
+		"js": ["popup.js"],
+		"css": ["popupStyle.css"]
+	}],
+	"background": {
+		"scripts": ["popup.js"]
+	},
+	"permissions": [
+        "tabs",
+        "http://*/",
+        "https://*/",
+		"storage"
+    ],
+	"browser_action": {
+		"default_icon": "logo.png",
+		"default_popup": "popup.html"
+	}
+}
