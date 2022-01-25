@@ -20,11 +20,7 @@ function getCurrentUserListItems()
 
 function getCurrentUser()
 {
-	var userElement = document.getElementsByClassName("profile-name");
-	if(userElement.length == 1)
-	{
-		return userElement[0].innerText;
-	}
+	return document.getElementsByClassName("account-dropdown-button").item(0).children[0].ariaLabel.split(/(\s)/)[0]
 }
 
 function compareUsers(user1, user2)
